@@ -1,6 +1,6 @@
 all: folder app
 
-GCC = g++ -std=c++11
+GCC = g++ -std=c++14
 BIN = bin
 OBJ = obj
 INC = -Iinc/
