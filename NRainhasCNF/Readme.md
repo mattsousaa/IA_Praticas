@@ -1,4 +1,4 @@
-- **Escreva o programa n-rainhas que:**
+- **Escreva um programa n-rainhas que:**
 
 > Recebe como entrada um número n≥4
 
