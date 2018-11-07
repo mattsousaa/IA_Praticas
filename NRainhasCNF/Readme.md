@@ -1,6 +1,6 @@
 - **Escreva um programa n-rainhas que:**
 
-> Recebe como entrada um número n≥4
+> Recebe como entrada um número n$\meq$4
 
 > Gera como saída o arquivo com a CNF que representa o problema das n-rainhas.
 
