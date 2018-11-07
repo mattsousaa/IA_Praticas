@@ -4,7 +4,7 @@
 
 > Gera como saída o arquivo com a CNF que representa o problema das n-rainhas.
 
-- **Produza um gráfico tempo de execução×n com 10 pontos.**
+- **Produza um gráfico tempo de execução x n com 10 pontos.**
 
 > use o comando time.
 
