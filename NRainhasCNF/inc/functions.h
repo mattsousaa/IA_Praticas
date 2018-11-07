@@ -1,6 +1,6 @@
 #ifndef FUNCTIONS
 #define FUNCTIONS
-#define N 4
+#define N 4         // N = ordem do tabuleiro
 
 void printSolution(int board[N][N]);
 
