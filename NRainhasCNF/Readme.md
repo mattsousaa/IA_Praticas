@@ -11,5 +11,7 @@
 > **time minisat rainha10.txt outrainha10.txt**
 
 > real: 0m0.032s
+
 > user: 0m0.030s
+
 > sys: 0m0.010s
