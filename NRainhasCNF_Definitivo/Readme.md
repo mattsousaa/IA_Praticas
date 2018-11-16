@@ -1,4 +1,4 @@
-# Observações e Compilação
+# Observações para Compilação
 
 - **O usuário deve mudar o caminho do diretório para salvar o CNF no arquivo cnf.cpp dentro da pasta /src na linha abaixo**
 > os << "/home/mateus/Desktop/2018.2/Praticas_IA/NRainhasCNF_Definitivo" << N << "x" << N << ".cnf";
