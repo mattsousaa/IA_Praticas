@@ -1,0 +1,170 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{epsfig}
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{fancyheadings}
+\usepackage{amsmath}
+\usepackage{calrsfs}
+\usepackage{enumerate}
+\usepackage{enumitem}   
+\DeclareGraphicsExtensions{.png,.pdf}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{esint}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{tasks}
+\usepackage[utf8]{inputenc}
+\usepackage{mathrsfs} % Transformada de Laplace
+\usepackage{indentfirst}
+\usepackage{xcolor}
+\usepackage{pgfplots}   % pacote para uso do pgfplots
+
+% As margens
+\setlength{\textheight}{24.0cm}
+\setlength{\textwidth}{17.5cm}
+\setlength{\oddsidemargin}{2.0cm} % Margens reais desejadas
+\setlength{\evensidemargin}{2.0cm} % 2+17.5+1.5=21cm (largura A4)
+\setlength{\topmargin}{1.5cm} % 1.5+1.6+1.0+24.0+1.6=29.7cm
+\setlength{\headheight}{1.6cm} % (altura A4)
+\setlength{\headsep}{1.0cm}
+\setlength{\columnsep}{1.5cm} % Coluna = 8cm ((17.5-1.5)/2)
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\topmargin}{-1in}
+\setlength{\footskip}{0.0cm}
+
+
+% Novos comandos
+\newcommand{\limite}{\displaystyle\lim}
+\newcommand{\integral}{\displaystyle\int}
+\newcommand{\somatorio}{\displaystyle\sum}
+\newcommand{\mat}[1]{\mbox{\boldmath{$#1$}}} 
+
+\pagestyle{fancy}
+
+
+\usepackage{lipsum}
+
+\lhead{
+\includegraphics[width=1cm]{brasao.png}
+}
+
+\rhead{ 
+\sc\textbf{U}niversidade \textbf{F}ederal do \textbf{C}eará\\
+Campus Quixadá\\ Inteligência Artificial}
+
+\cfoot{}
+
+\begin{document}
+
+	\begin{center}
+		\Large Resolvedores SAT - O Problema das N Rainhas  
+	\end{center}
+
+\begin{flushleft}
+\textbf{Nome:} Mateus Sousa Araújo \\
+\textbf{Matrícula:} 374858 \\
+\textbf{Professora:} Maria Viviane de Menezes \\
+\textbf{Curso:} Engenharia de Computação \\
+\end{flushleft}
+
+\begin{enumerate}
+
+\item \textbf{Realização de Testes}
+
+O código foi feito em C++ e foram realizados 10 testes com a ordem do tabuleiro e o tempo de execução em segundos.
+
+% ######## init table ########
+\begin{table}[h]
+ \centering
+% distancia entre a linha e o texto
+ {\renewcommand\arraystretch{1.25}
+ 
+ \begin{tabular}{ l l }
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{\textbf{Ordem N} \centering } &
+    \multicolumn{1}{p{4.217cm}|}{\textbf{Tempo (s)} \centering }
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{10 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{0.010 \centering }
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{20 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{0.049 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{30 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{0.073 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{40 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{0.223 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{50 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{0.501 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{100 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{7.826 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{120 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{17.754 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{150 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{57.178 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{190 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{240.09 \centering}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.850cm}|}{200 \centering } &
+    \multicolumn{1}{p{4.217cm}|}{300.559 \centering}
+  \\  
+  \hline
+
+ \end{tabular} }
+ \caption{Testes realizados}
+\end{table}
+
+\item \textbf{Geração do gráfico}
+
+Logo após gerei um gráfico com a quantidade de rainhas e o tempo de execução. Foi observado um crescimento exponencial de acordo com o aumento do número de rainhas. Se N for muito grande, o tempo de execução também é muito grande, necessitando dessa forma, de altos recursos computacionais. O número de cláusulas cresce exponencialmente. Podemos considerar esse problema como NP-Completo.
+
+{\par\centering
+\begin{tikzpicture} %  indicação que estamos iniciando uma figura
+
+\begin{axis}[ %  iniciando os eixos   
+xlabel= Número de rainhas (N),            % nomeando os eixos
+ylabel= Tempo (s)]
+
+\addplot[color=blue,mark=*] coordinates{  % caracterizando a plotagem
+(10,0.010)
+(20,0.049)
+(30,0.073)
+(40,0.223)
+(50,0.501)
+(100,7.826)
+(120,17.754)
+(150,57.178)
+(190,240.09)
+(200,300.559)
+};
+\end{axis}
+
+ 
+\end{tikzpicture}
+
+\par}
+
+\end{enumerate}
+
+
+\end{document}
