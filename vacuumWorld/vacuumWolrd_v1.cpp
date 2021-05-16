@@ -39,16 +39,16 @@ public:
         }
     }
 
+    bool getLocation(){
+        return location;
+    }
+
     void setIsDirty(bool value){
         if(location){   // Se está no quarto A   
             isDirty.roomA = value;
         } else {        // Se está no quarto B
             isDirty.roomB = value;
         }
-    }
-
-    bool getLocation(){
-        return location;
     }
 
     void setLocation(bool value){
@@ -72,10 +72,25 @@ public:
     }
 
     string getName(){
-        return this->name;
+        return name;
     }
 
+    /*
+    - Overloading stream insertion operator (<<)
+    These operators must be overloaded as a global function. And if we want to allow them to access private data members of class, 
+    we must make them friend.
+    */
+    friend ostream & operator<<(ostream &out, Action &a);   
+
 };
+
+// Must declare outside Action scope
+ostream & operator<<(ostream &out, Action &a){
+    
+    out << a.name << " /";
+    
+    return out;
+}
 
 /*
 *Agent
@@ -95,12 +110,19 @@ protected:
 
 public:
 
-    void setPerception(Perception perception){
-        this->perception = perception;
-    }
-
     Perception getPerception(){
         return perception;
+    }
+
+    void getActions(){
+        cout << "Ações realizadas pelo agente: ";
+        for(auto i: actions)
+            cout << i << " ";   // overload << operator (i is an Action object)
+        cout << endl;
+    }
+
+    void setPerception(Perception perception){
+        this->perception = perception;
     }
 };
 
@@ -135,7 +157,6 @@ public:
             this->perception.setLocation(true);             // Agente agora está na sala A
             return Action("Esquerda");                      // Retorna ação "Esquerda"
         }
-        
     }
 
     void setPerception(Perception perception){
@@ -177,27 +198,28 @@ public:
 
     }
 
-    bool getIsDirtyA() const{
+    bool getIsDirtyA(){
         return isDirtyA;
     }
 
-    void setIsDirtyA(bool value){
-        this->isDirtyA = value;
-    }
-
-    bool getIsDirtyB() const{
+    bool getIsDirtyB(){
         return isDirtyB;
     }
 
-    void setIsDirtyb(bool value){
-        this->isDirtyB = value;
+    bool getAgentLocation(){
+        return agentLocation;
     }
 
-    bool getAgentLocation() const{
-        return this->agentLocation;
+    void setIsDirtyA(bool value){
+        isDirtyA = value;
     }
+
+    void setIsDirtyB(bool value){
+        isDirtyB = value;
+    }
+
     void setAgentLocation(bool value){
-        this->agentLocation = value;
+        agentLocation = value;
     }
 };
 
@@ -209,6 +231,11 @@ int main(int argc, char *argv[]){
     num = atoi(argv[1]);
 
     Environment ambiente(true, true, true);                    // isDirtyA, isDirtyB, agentLocation (1: A, 0: B)
+
+    // cout << "\nCondições iniciais: " << endl;
+    // cout << "isDirtyA = " << ambiente.getIsDirtyA() << endl;
+    // cout << "isDirtyB = " << ambiente.getIsDirtyB() << endl;
+    // cout << "agentLocation = " << ambiente.getAgentLocation() << endl << endl;
 
     while(num > 0){
 
@@ -225,5 +252,8 @@ int main(int argc, char *argv[]){
 
         num--;
     }
+
+    // Mostra todas as ações realizadas pelo agente
+    s.getActions();
 
 }
