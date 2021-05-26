@@ -1,0 +1,47 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+Action	atividade01/vacuumWolrd_v1.cpp	/^    Action(string name){$/;"	f	class:Action	file:
+Action	atividade01/vacuumWolrd_v1.cpp	/^class Action {$/;"	c	file:
+Agent	atividade01/vacuumWolrd_v1.cpp	/^class Agent {$/;"	c	file:
+Environment	atividade01/vacuumWolrd_v1.cpp	/^    Environment(bool isDirtyA, bool isDirtyB, bool agentLocation){$/;"	f	class:Environment	file:
+Environment	atividade01/vacuumWolrd_v1.cpp	/^class Environment {$/;"	c	file:
+Perception	atividade01/vacuumWolrd_v1.cpp	/^    Perception(bool location = false, bool isDirtyA = false, bool isDirtyB = false){$/;"	f	class:Perception	file:
+Perception	atividade01/vacuumWolrd_v1.cpp	/^class Perception {$/;"	c	file:
+SimpleAgent	atividade01/vacuumWolrd_v1.cpp	/^class SimpleAgent : public Agent {$/;"	c	file:
+actions	atividade01/vacuumWolrd_v1.cpp	/^    vector<Action> actions;$/;"	m	class:Agent	typeref:typename:vector<Action>	file:
+agentLocation	atividade01/vacuumWolrd_v1.cpp	/^    bool isDirtyA, isDirtyB, agentLocation;$/;"	m	class:Environment	typeref:typename:bool	file:
+dirtyState	atividade01/vacuumWolrd_v1.cpp	/^struct dirtyState {$/;"	s	file:
+getActions	atividade01/vacuumWolrd_v1.cpp	/^    void getActions(){$/;"	f	class:Agent	typeref:typename:void	file:
+getAgentLocation	atividade01/vacuumWolrd_v1.cpp	/^    bool getAgentLocation(){$/;"	f	class:Environment	typeref:typename:bool	file:
+getIsDirty	atividade01/vacuumWolrd_v1.cpp	/^    bool getIsDirty(){$/;"	f	class:Perception	typeref:typename:bool	file:
+getIsDirtyA	atividade01/vacuumWolrd_v1.cpp	/^    bool getIsDirtyA(){$/;"	f	class:Environment	typeref:typename:bool	file:
+getIsDirtyB	atividade01/vacuumWolrd_v1.cpp	/^    bool getIsDirtyB(){$/;"	f	class:Environment	typeref:typename:bool	file:
+getLocation	atividade01/vacuumWolrd_v1.cpp	/^    bool getLocation(){$/;"	f	class:Perception	typeref:typename:bool	file:
+getName	atividade01/vacuumWolrd_v1.cpp	/^    string getName(){$/;"	f	class:Action	typeref:typename:string	file:
+getPerception	atividade01/vacuumWolrd_v1.cpp	/^    Perception getPerception(){$/;"	f	class:Agent	typeref:typename:Perception	file:
+getPerception	atividade01/vacuumWolrd_v1.cpp	/^    Perception getPerception(){$/;"	f	class:Environment	typeref:typename:Perception	file:
+getPerception	atividade01/vacuumWolrd_v1.cpp	/^    Perception getPerception(){$/;"	f	class:SimpleAgent	typeref:typename:Perception	file:
+isDirty	atividade01/vacuumWolrd_v1.cpp	/^    dirtyState isDirty;$/;"	m	class:Perception	typeref:typename:dirtyState	file:
+isDirtyA	atividade01/vacuumWolrd_v1.cpp	/^    bool isDirtyA, isDirtyB, agentLocation;$/;"	m	class:Environment	typeref:typename:bool	file:
+isDirtyB	atividade01/vacuumWolrd_v1.cpp	/^    bool isDirtyA, isDirtyB, agentLocation;$/;"	m	class:Environment	typeref:typename:bool	file:
+location	atividade01/vacuumWolrd_v1.cpp	/^    bool location;$/;"	m	class:Perception	typeref:typename:bool	file:
+main	atividade01/vacuumWolrd_v1.cpp	/^int main(int argc, char *argv[]){$/;"	f	typeref:typename:int
+name	atividade01/vacuumWolrd_v1.cpp	/^    string name;$/;"	m	class:Action	typeref:typename:string	file:
+operator <<	atividade01/vacuumWolrd_v1.cpp	/^ostream & operator<<(ostream &out, Action &a){$/;"	f	typeref:typename:ostream &
+perception	atividade01/vacuumWolrd_v1.cpp	/^    Perception perception;$/;"	m	class:Agent	typeref:typename:Perception	file:
+roomA	atividade01/vacuumWolrd_v1.cpp	/^    bool roomA;         \/\/ 1: sujo; 0: limpo$/;"	m	struct:dirtyState	typeref:typename:bool	file:
+roomB	atividade01/vacuumWolrd_v1.cpp	/^    bool roomB;         \/\/ 1: sujo; 0: limpo$/;"	m	struct:dirtyState	typeref:typename:bool	file:
+selectAction	atividade01/vacuumWolrd_v1.cpp	/^    Action selectAction(Perception perception1){$/;"	f	class:SimpleAgent	typeref:typename:Action	file:
+setAgentLocation	atividade01/vacuumWolrd_v1.cpp	/^    void setAgentLocation(bool value){$/;"	f	class:Environment	typeref:typename:void	file:
+setIsDirty	atividade01/vacuumWolrd_v1.cpp	/^    void setIsDirty(bool value){$/;"	f	class:Perception	typeref:typename:void	file:
+setIsDirtyA	atividade01/vacuumWolrd_v1.cpp	/^    void setIsDirtyA(bool value){$/;"	f	class:Environment	typeref:typename:void	file:
+setIsDirtyB	atividade01/vacuumWolrd_v1.cpp	/^    void setIsDirtyB(bool value){$/;"	f	class:Environment	typeref:typename:void	file:
+setLocation	atividade01/vacuumWolrd_v1.cpp	/^    void setLocation(bool value){$/;"	f	class:Perception	typeref:typename:void	file:
+setPerception	atividade01/vacuumWolrd_v1.cpp	/^    void setPerception(Perception perception){$/;"	f	class:Agent	typeref:typename:void	file:
+setPerception	atividade01/vacuumWolrd_v1.cpp	/^    void setPerception(Perception perception){$/;"	f	class:SimpleAgent	typeref:typename:void	file:
+updateEnvironment	atividade01/vacuumWolrd_v1.cpp	/^    void updateEnvironment(Perception p){$/;"	f	class:Environment	typeref:typename:void	file:
