@@ -1,4 +1,4 @@
-### Final Machine Learning practical activity:
+### Final Machine Learning practical activity (Breast Cancer Detector):
 
 In this practice, 4 classification algorithms for the identification of Breast cancer were implemented. Are they: 
 
